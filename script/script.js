@@ -146,3 +146,74 @@ const cardImagesBeforeFunctional = new AnimationFunctional(cardImagesBefore);
 2. Slider and create items 
 3. A button that scrolls the user to the top of a web page
 */
+
+//Items Async
+
+const newProductsContainerSlider = document.querySelector(
+  ".NewProducts__container-slider"
+);
+
+class AsyncFunctional {
+  constructor(asyncItems, containerForElements) {
+    this.asyncItems = asyncItems;
+    this.containerForElements = containerForElements;
+
+    this.initAsync();
+  }
+
+  initAsync() {
+    this.asyncItemsFunction(this.asyncItems);
+  }
+
+  async asyncItemsFunction(itemsApi) {
+    try {
+      const response = await fetch(itemsApi);
+
+      if (!response.ok) {
+        throw new Error("Failed to load data");
+      }
+
+      const items = await response.json();
+
+      items.forEach((item) => {
+        const itemDiv = document.createElement("div");
+        const imageDiv = document.createElement("div");
+        const itemImg = document.createElement("img");
+        const itemTitle = document.createElement("h3");
+        const itemText = document.createElement("div");
+        const itemInfo = document.createElement("div");
+        const itemPrice = document.createElement("div");
+        const itemVolume = document.createElement("div");
+        const itemButton = document.createElement("button");
+
+        itemImg.src = item.img;
+        itemTitle.textContent = item.title;
+        itemText.textContent = item.text;
+        itemPrice.textContent = item.price;
+        itemVolume.textContent = item.volume;
+        itemButton.textContent = item.buttonText;
+
+        imageDiv.appendChild(itemImg);
+        itemDiv.appendChild(imageDiv);
+        itemDiv.appendChild(itemTitle);
+        itemDiv.appendChild(itemText);
+        itemInfo.appendChild(itemPrice);
+        itemInfo.appendChild(itemVolume);
+        itemDiv.appendChild(itemInfo);
+        itemDiv.appendChild(itemButton);
+
+        this.containerForElements.appendChild(itemDiv);
+      });
+    } catch (error) {
+      this.containerForElements.textContent = "Failed to load coffee ☕";
+      console.error(error);
+    }
+  }
+}
+
+const items = "./script/coffee.json";
+
+const itemsAsyncFunctional = new AsyncFunctional(
+  items,
+  newProductsContainerSlider
+);
