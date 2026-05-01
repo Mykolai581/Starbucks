@@ -1,0 +1,93 @@
+.animation-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.9s;
+}
+
+.animation-element.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animation-fall {
+  opacity: 0;
+  transform: translateY(-200px);
+}
+
+.animation-fall.show {
+  opacity: 1;
+  animation: fall 1s ease forwards;
+}
+
+.card-image {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.9s ease;
+}
+
+.card-image::before {
+  content: "";
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1.3s ease;
+}
+
+.card-image.show {
+  opacity: 1;
+  transform: translate(0);
+}
+
+.card-image.show::before {
+  opacity: 1;
+  transform: translate(0);
+}
+
+@keyframes fall {
+  60% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  85% {
+    transform: translateY(0);
+  }
+  92% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.image-animation {
+  opacity: 0;
+}
+
+.image-animation.active-infinity {
+  opacity: 1;
+  animation: moveWave 4s ease-in-out infinite;
+}
+
+@keyframes moveWave {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(20px) translateY(-10px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/*Lazy-Loading*/
+
+.lazy {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+img {
+  opacity: 1;
+}
