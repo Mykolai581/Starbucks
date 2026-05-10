@@ -94,6 +94,7 @@ class AnimationFunctional {
       "animation-fall": "show",
       "image-animation": "active-infinity",
       "card-image": "show",
+      "slide-element": "show",
     };
 
     this.initAnimation();
@@ -139,19 +140,10 @@ const imagesAnimationFunctional = new AnimationFunctional(imagesAnimation);
 const cardImagesFunctional = new AnimationFunctional(cardImages);
 const cardImagesBeforeFunctional = new AnimationFunctional(cardImagesBefore);
 
-//Hi 😀 its a website for StarBacks
-
-/*
-1. Modal for button
-2. Slider and create items 
-3. A button that scrolls the user to the top of a web page
-*/
-
 //Items Async
 
-const newProductsContainerSlider = document.querySelector(
-  ".NewProducts__container-slider"
-);
+const newProductsWrapper = document.querySelector(".NewProducts-wrapper");
+const items = "./script/coffee.json";
 
 class AsyncFunctional {
   constructor(asyncItems, containerForElements) {
@@ -161,8 +153,10 @@ class AsyncFunctional {
     this.initAsync();
   }
 
-  initAsync() {
-    this.asyncItemsFunction(this.asyncItems);
+  async initAsync() {
+    await this.asyncItemsFunction(this.asyncItems);
+
+    this.initSwiper();
   }
 
   async asyncItemsFunction(itemsApi) {
@@ -179,41 +173,97 @@ class AsyncFunctional {
         const itemDiv = document.createElement("div");
         const imageDiv = document.createElement("div");
         const itemImg = document.createElement("img");
-        const itemTitle = document.createElement("h3");
+        const itemTitle = document.createElement("div");
         const itemText = document.createElement("div");
         const itemInfo = document.createElement("div");
         const itemPrice = document.createElement("div");
         const itemVolume = document.createElement("div");
         const itemButton = document.createElement("button");
 
+        itemDiv.classList.add("swiper-slide", "NewProducts-slide");
+
+        imageDiv.classList.add("NewProducts-slide__image");
+        itemTitle.classList.add("NewProducts-slide__title");
+        itemText.classList.add("NewProducts-slide__text");
+        itemInfo.classList.add("NewProducts-slide__info");
+        itemPrice.classList.add("NewProducts-slide__price");
+        itemVolume.classList.add("NewProducts-slide__volume");
+
+        itemButton.classList.add(
+          "NewProducts-slide__button",
+          "button-green",
+          "button"
+        );
+
         itemImg.src = item.img;
+
         itemTitle.textContent = item.title;
         itemText.textContent = item.text;
         itemPrice.textContent = item.price;
         itemVolume.textContent = item.volume;
         itemButton.textContent = item.buttonText;
 
-        imageDiv.appendChild(itemImg);
-        itemDiv.appendChild(imageDiv);
-        itemDiv.appendChild(itemTitle);
-        itemDiv.appendChild(itemText);
-        itemInfo.appendChild(itemPrice);
-        itemInfo.appendChild(itemVolume);
-        itemDiv.appendChild(itemInfo);
-        itemDiv.appendChild(itemButton);
+        imageDiv.append(itemImg);
 
-        this.containerForElements.appendChild(itemDiv);
+        itemInfo.append(itemPrice, itemVolume);
+
+        itemDiv.append(imageDiv, itemTitle, itemText, itemInfo, itemButton);
+
+        this.containerForElements.append(itemDiv);
       });
     } catch (error) {
       this.containerForElements.textContent = "Failed to load coffee ☕";
+
       console.error(error);
     }
   }
+
+  initSwiper() {
+    new Swiper(".swiper-container", {
+      loop: false,
+
+      spaceBetween: 54,
+
+      navigation: {
+        nextEl: ".NewProducts-button-next",
+        prevEl: ".NewProducts-button-prev",
+      },
+
+      autoHeight: false,
+
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+
+        480: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 30,
+        },
+
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 40,
+        },
+
+        1280: {
+          slidesPerView: 3.3,
+          spaceBetween: 54,
+        },
+      },
+    });
+  }
 }
 
-const items = "./script/coffee.json";
+new AsyncFunctional(items, newProductsWrapper);
 
-const itemsAsyncFunctional = new AsyncFunctional(
-  items,
-  newProductsContainerSlider
-);
+/*
+1. Modal for button
+2. A button that scrolls the user to the top of a web page
+*/

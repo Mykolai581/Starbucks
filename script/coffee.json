@@ -8,8 +8,24 @@
     "buttonText": "Buy Product"
   },
   {
-    "img": "../img/MainSectionNewProducts/Coffee01.png",
+    "img": "../img/MainSectionNewProducts/Coffee02.png",
     "title": "Fast",
+    "text": "Our cafe will serve you quickly",
+    "price": "7,45$",
+    "volume": "330 ml",
+    "buttonText": "Buy Product"
+  },
+  {
+    "img": "../img/MainSectionNewProducts/Coffee03.png",
+    "title": "Cappuccino",
+    "text": "Our cafe will serve you quickly",
+    "price": "7,45$",
+    "volume": "330 ml",
+    "buttonText": "Buy Product"
+  },
+  {
+    "img": "../img/MainSectionNewProducts/Coffee02.png",
+    "title": "Cappuccino",
     "text": "Our cafe will serve you quickly",
     "price": "7,45$",
     "volume": "330 ml",
@@ -24,7 +40,7 @@
     "buttonText": "Buy Product"
   },
   {
-    "img": "../img/MainSectionNewProducts/Coffee01.png",
+    "img": "../img/MainSectionNewProducts/Coffee02.png",
     "title": "Fast",
     "text": "Our cafe will serve you quickly",
     "price": "7,45$",
@@ -33,6 +49,14 @@
   },
   {
     "img": "../img/MainSectionNewProducts/Coffee01.png",
+    "title": "Cappuccino",
+    "text": "Our cafe will serve you quickly",
+    "price": "7,45$",
+    "volume": "330 ml",
+    "buttonText": "Buy Product"
+  },
+  {
+    "img": "../img/MainSectionNewProducts/Coffee02.png",
     "title": "Fast",
     "text": "Our cafe will serve you quickly",
     "price": "7,45$",
@@ -40,16 +64,8 @@
     "buttonText": "Buy Product"
   },
   {
-    "img": "../img/MainSectionNewProducts/Coffee01.png",
-    "title": "Fast",
-    "text": "Our cafe will serve you quickly",
-    "price": "7,45$",
-    "volume": "330 ml",
-    "buttonText": "Buy Product"
-  },
-  {
-    "img": "../img/MainSectionNewProducts/Coffee01.png",
-    "title": "Fast",
+    "img": "../img/MainSectionNewProducts/Coffee03.png",
+    "title": "Cappuccino",
     "text": "Our cafe will serve you quickly",
     "price": "7,45$",
     "volume": "330 ml",

@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="stylesheet" href="./style/adaptive.css" />
     <link rel="stylesheet" href="./style/animation.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
     <title>StarBucks</title>
   </head>
   <body>
@@ -187,7 +191,7 @@
         <section class="main__NewProducts NewProducts">
           <div class="NewProducts__container">
             <div class="NewProducts__content">
-              <div class="NewProducts__tilte-container">
+              <div class="NewProducts__title-container animation-element">
                 <h2 class="NewProducts__title title">
                   New Our <span>Products</span>
                 </h2>
@@ -200,33 +204,189 @@
                 </p>
               </div>
             </div>
-            <div class="NewProducts__container-slider">
-              <div class="item">
-                <div class="item__image">
-                  <img src="" alt="" />
-                </div>
-                <h3 class="item__title"></h3>
-                <div class="item__text"></div>
-                <div class="item__info">
-                  <div class="item__price"></div>
-                  <div class="item__volume"></div>
-                </div>
-                <button class="item__button"></button>
+
+            <div class="swiper swiper-container">
+              <div class="swiper-wrapper NewProducts-wrapper"></div>
+
+              <div class="NewProducts-button-prev button-swipe">
+                <img
+                  src="./img/MainSectionNewProducts/Arrow2.svg"
+                  alt="Arrow"
+                />
+              </div>
+              <div class="NewProducts-button-next button-swipe">
+                <img src="./img/MainSectionNewProducts/Arrow.svg" alt="Arrow" />
               </div>
             </div>
           </div>
         </section>
         <section class="main__NewEvents NewEvents">
-          <div class="NewEvents__container"></div>
+          <div class="NewEvents__container">
+            <div class="NewEvents__lines image-animation">
+              <img src="./img/MainSectionNewEvents/Lines.png" alt="Lines" />
+            </div>
+            <div class="NewEvents__content">
+              <div class="NewEvents__text text">
+                <p>
+                  Only in 2021 we have made more than 100,000 orders for you,
+                  your loved ones, all of you, and in 2022 we are ready to
+                  destroy the market
+                </p>
+              </div>
+              <div class="NewEvents__title-container animation-element">
+                <h2 class="NewEvents__title title">
+                  Our New <span>Events</span>
+                </h2>
+              </div>
+            </div>
+            <div class="NewEvents__items">
+              <div class="NewEvents__item animation-element">
+                <div class="NewEvents__image image-big">
+                  <img
+                    data-src="./img/MainSectionNewEvents/Image1.jpg"
+                    alt="Image"
+                    class="lazy"
+                  />
+                </div>
+                <div class="NewEvents__item-content">
+                  <div class="NewEvents__item-title">
+                    TWO COFFEE FOR 1 PRICE
+                  </div>
+                  <button class="NewEvents__item-button button button-green">
+                    More
+                  </button>
+                </div>
+              </div>
+              <div class="NewEvents__item animation-element">
+                <div class="NewEvents__image image-big">
+                  <img
+                    data-src="./img/MainSectionNewEvents/Image2.jpg"
+                    alt="Image"
+                    class="lazy"
+                  />
+                </div>
+                <div class="NewEvents__item-content">
+                  <div
+                    class="NewEvents__item-title NewEvents__item-title-small"
+                  >
+                    KITCHEN TOUR
+                  </div>
+                  <button class="NewEvents__item-button button button-green">
+                    More
+                  </button>
+                </div>
+              </div>
+              <div class="NewEvents__item animation-element">
+                <div class="NewEvents__image image-small">
+                  <img
+                    data-src="./img/MainSectionNewEvents/Image3.jpg"
+                    alt="Image"
+                    class="lazy"
+                  />
+                </div>
+                <div class="NewEvents__item-content">
+                  <div class="NewEvents__item-title">
+                    FREE COFFEE FOR 3 COFFEE
+                  </div>
+                  <button class="NewEvents__item-button button button-green">
+                    More
+                  </button>
+                </div>
+              </div>
+              <div class="NewEvents__item animation-element">
+                <div class="NewEvents__image image-small">
+                  <img
+                    data-src="./img/MainSectionNewEvents/Image4.jpg"
+                    alt="Image"
+                    class="lazy"
+                  />
+                </div>
+                <div class="NewEvents__item-content">
+                  <div
+                    class="NewEvents__item-title NewEvents__item-title-small"
+                  >
+                    OUR INSTAGRAM
+                  </div>
+                  <button class="NewEvents__item-button button button-green">
+                    More
+                  </button>
+                </div>
+              </div>
+              <div class="NewEvents__item animation-element">
+                <div class="NewEvents__image image-small">
+                  <img
+                    data-src="./img/MainSectionNewEvents/Image5.jpg"
+                    alt="Image"
+                    class="lazy"
+                  />
+                </div>
+                <div class="NewEvents__item-content">
+                  <div class="NewEvents__item-title">
+                    WHERE ARE YOU CHOOSE US?
+                  </div>
+                  <button class="NewEvents__item-button button button-green">
+                    More
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
         <section class="main__contacts contacts">
-          <div class="contacts__container"></div>
+          <div class="contacts__container">
+            <div class="contacts__content">
+              <h2 class="contacts__title title">Our <span>Contacts</span></h2>
+              <div class="contacts__text text">
+                <p>
+                  Have time to buy the most harmonious drinks in the new
+                  Starbucks coffee and don't forget about the discount!
+                </p>
+              </div>
+              <div class="contacts__links">
+                <div class="contacts__item">
+                  <a href="#" class="contacts__link">
+                    <img
+                      src="./img/icons/Instagram.svg"
+                      alt="Instagram"
+                    />@supercoffee</a
+                  >
+                </div>
+                <div class="contacts__item">
+                  <a href="#" class="contacts__link"
+                    ><img
+                      src="./img/icons/Phone.svg"
+                      alt="Phone"
+                    />+7-999-999-99-99</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="contacts__images">
+              <div class="contacts__image-one animation-fall">
+                <img src="./img/MainSectionContacts/Star.png" alt="Star" />
+              </div>
+
+              <div class="contacts__image-two card-image">
+                <img
+                  data-src="./img/MainSectionContacts/Image.png"
+                  alt="Image"
+                  class="lazy"
+                />
+              </div>
+            </div>
+            <div class="contacts__image-animations">
+              <div class="contacts__image-animation image-animation">
+                <img src="./img/MainSectionContacts/Lines.png" alt="Lines" />
+              </div>
+            </div>
+          </div>
         </section>
       </main>
       <footer class="footer">
         <div class="footer__container"></div>
       </footer>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="./script/script.js"></script>
   </body>
 </html>
