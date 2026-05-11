@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 /*Header*/
 
 .header {
@@ -204,6 +208,7 @@
   position: absolute;
   top: -50px;
   left: 250px;
+  z-index: 5;
 }
 
 .NewCafe__image-one img {
@@ -224,6 +229,7 @@
   width: 500px;
   height: 700px;
   object-fit: cover;
+  z-index: 2;
 }
 
 .NewCafe__images-animations {
@@ -697,7 +703,7 @@
 
 .main__contacts {
   padding-top: 200px;
-  padding-bottom: 2008px;
+  padding-bottom: 208px;
 }
 
 .contacts__container {
@@ -706,13 +712,19 @@
   justify-content: space-between;
 }
 
-.contacts__content{
+.contacts__content {
   position: relative;
 }
 
-.delicious__content {
-
-  z-index: 2;
+.contacts__content::before {
+  content: "";
+  background: url("../img/MainSectionContacts/Ellipse1.png") 0 0 / 100%
+    no-repeat;
+  width: 324px;
+  height: 324px;
+  position: absolute;
+  top: -50px;
+  right: 0px;
 }
 
 .contacts__title {
@@ -752,15 +764,15 @@
   left: 500px;
 }
 
-.delicious__images::before {
+.contacts__images::before {
   content: "";
-  background: url("../img/MainSectionDelicious/Ellipse1.png") 0 0 / 100%
+  background: url("../img/MainSectionContacts/Ellipse2.png") 0 0 / 100%
     no-repeat;
   width: 324px;
   height: 324px;
   position: absolute;
-  top: 200px;
-  right: -300px;
+  top: 0px;
+  right: -100px;
 }
 
 .contacts__image-one {
@@ -796,4 +808,105 @@
   position: absolute;
   top: -200px;
   right: -200px;
+}
+
+/*Footer*/
+
+.footer {
+  position: relative;
+  padding-top: 38px;
+  padding-bottom: 38px;
+  background-color: #0b0c0d;
+  z-index: 1;
+}
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+.footer__info {
+}
+.footer__logo {
+}
+.footer-logo__link {
+}
+.footer__content {
+  display: flex;
+  gap: 83px;
+}
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.footer__item {
+  font-size: 20px;
+}
+.footer__title {
+  color: #bbb3b3;
+}
+.footer__link {
+  color: #3b3b3b;
+  cursor: pointer;
+}
+
+.footer__link:hover {
+  color: #5c5c5c;
+  text-decoration: underline;
+}
+
+.footer__image {
+  position: relative;
+  width: 84px;
+  height: 84px;
+  border: 1px solid #35c66b;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease 0.2s;
+}
+
+.footer__image img {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  top: 29%;
+  left: 29%;
+}
+
+.footer__image:hover {
+  border: 1px solid #237249;
+}
+
+.footer__container-two {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__number {
+  font-size: 26px;
+  background: linear-gradient(to right, #35c66b, #237249);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer__number:hover {
+  color: #35c66b;
+  text-decoration: underline;
+}
+
+.footer__instagram {
+  position: relative;
+  z-index: 2;
+}
+
+.footer__instagram::before {
+  content: "";
+  background: url("../img/MainSectionContacts/Ellipse2.png") 0 0 / 100%
+    no-repeat;
+  width: 124px;
+  height: 124px;
+  position: absolute;
+  top: -10px;
+  right: -40px;
+  z-index: -1;
 }

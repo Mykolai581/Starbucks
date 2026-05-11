@@ -35,14 +35,6 @@ const menuBurger = document.querySelector(".menu-burger");
 
 const menuFunctional = new MenuFunctional(headerMenu, menuLinks, menuBurger);
 
-//Modal
-
-class Modal {
-  constructor(modal) {
-    this.modal = modal;
-  }
-}
-
 //Lazy-Loading
 
 class LoadingLazy {
@@ -196,6 +188,7 @@ class AsyncFunctional {
         );
 
         itemImg.src = item.img;
+        itemImg.alt = item.title;
 
         itemTitle.textContent = item.title;
         itemText.textContent = item.text;
@@ -263,7 +256,44 @@ class AsyncFunctional {
 
 new AsyncFunctional(items, newProductsWrapper);
 
-/*
-1. Modal for button
-2. A button that scrolls the user to the top of a web page
-*/
+// Footer
+
+document.addEventListener("DOMContentLoaded", () => {
+  class AdaptiveButtonMover {
+    constructor(button, desktopContainer, mobileContainer, breakpoint = 767) {
+      this.button = button;
+      this.desktopContainer = desktopContainer;
+      this.mobileContainer = mobileContainer;
+      this.breakpoint = breakpoint;
+
+      this.init();
+    }
+
+    init() {
+      this.moveButtonFunction();
+
+      window.addEventListener("resize", () => {
+        this.moveButtonFunction();
+      });
+    }
+
+    moveButtonFunction() {
+      const isMobile = window.innerWidth < this.breakpoint;
+      const targetContainer = isMobile
+        ? this.mobileContainer
+        : this.desktopContainer;
+
+      const currentParent = this.button.parentNode;
+
+      if (currentParent !== targetContainer) {
+        targetContainer.appendChild(this.button);
+      }
+    }
+  }
+
+  const footerContainer = document.querySelector(".footer__container");
+  const footerInfo = document.querySelector(".footer__info");
+  const footerButton = document.querySelector(".footer__image");
+
+  new AdaptiveButtonMover(footerButton, footerContainer, footerInfo);
+});
